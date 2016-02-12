@@ -1,4 +1,6 @@
-FROM resin/rpi-raspbian
+FROM resin/rpi-raspbian:jessie
+
+ENV TZ Europe/Berlin
 
 RUN apt-get update \
     && apt-get install -y wget \
