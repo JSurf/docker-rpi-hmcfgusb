@@ -1,4 +1,6 @@
-FROM resin/rpi-raspbian:jessie
+FROM jsurf/rpi-raspbian:latest
+
+RUN [ "cross-build-start" ]
 
 ENV TZ Europe/Berlin
 
@@ -15,3 +17,5 @@ RUN wget -O ./lxccu-repo.deb http://cdn.lxccu.com/latest-repo \
 EXPOSE 1000
 
 CMD ["hmland","-p","1000" ]
+
+RUN [ "cross-build-end" ]
