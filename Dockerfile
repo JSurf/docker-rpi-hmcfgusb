@@ -5,7 +5,7 @@ RUN [ "cross-build-start" ]
 ENV TZ Europe/Berlin
 
 RUN apt-get update \
-    && apt-get install -y curl \
+    && apt-get install -y curl ca-certificates \
     && rm -rf /var/lib/apt/lists/*
 
 RUN curl -s https://packagecloud.io/install/repositories/jsurf/raspbian/script.deb.sh | bash \
